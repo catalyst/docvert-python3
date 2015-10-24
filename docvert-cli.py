@@ -32,7 +32,7 @@ class PrintPipelines(argparse.Action):
 
 parser = argparse.ArgumentParser(description='Converts Office files to OpenDocument, DocBook and HTML.', epilog='E.g.: ./docvert-cli.py doc/sample/sample-document.doc -p="web standards"')
 parser.add_argument('--version', '-v', action='version', version='Docvert %s' % version)
-parser.add_argument('infile', type=file, help='Path or Stdin of Office file to convert', default=sys.stdin, nargs='+')
+parser.add_argument('--infile', '-f', help='Path or Stdin of Office file to convert', default=sys.stdin, nargs='+')
 parser.add_argument('--pipeline', '-p', help='Pipeline you wish to use.', required=True)
 parser.add_argument('--response', '-r', help='Format of ZIP conversion response.', default='auto', choices=['auto','path','stdout'])
 parser.add_argument('--autopipeline', '-a', help='AutoPipeline to use (when your pipeline requires it).', default=default_auto_pipeline, choices=auto_pipelines)
